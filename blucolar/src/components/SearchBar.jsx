@@ -1,4 +1,4 @@
-import React , {useState , useEffect} from 'react'
+import React , {useState } from 'react'
 import axios from 'axios'
 import Results from './Results'
  
@@ -25,7 +25,7 @@ console.log(repos);
             <input type="text" placeholder = 'search' value= {searchInput}
             onChange = {handleChange}/>
             <button onClick= {handleClick}>search</button>
-            <h2>Search</h2>
+           
             < Results  repos= {repos}/>
         </div>
     )

@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import SearchBar from './components/SearchBar';
 import Results from './components/Results';
+import PandNButtons from './components/PandNButtons';
+
 
 
 
@@ -30,15 +32,21 @@ function App() {
         setRepos(data);
         setLoading(false);
       })
-    }, page);
+    }, [page]);
 
     return(
       <div>
-        <SearchBar />
+       <h2> List of Repository with most stars </h2>
+       
 
         {repos && !loading ? (
           <Results repos = {repos} />
         ):(`loading`)}
+        <PandNButtons 
+        nextPag= {nextPage}
+        prevPag = {prevPage}
+        page = {page}
+         />
       </div>
     )
 
